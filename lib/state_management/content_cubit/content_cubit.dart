@@ -10,9 +10,6 @@ class ContentCubit extends Cubit<ContentState> {
     print(selectedType);
 
     switch (selectedType) {
-      case 'Home':
-        emit(state.changeType(type: ContentType.home));
-        break;
       case 'About':
         emit(state.changeType(type: ContentType.about));
         break;
@@ -26,7 +23,7 @@ class ContentCubit extends Cubit<ContentState> {
         emit(state.changeType(type: ContentType.contact));
         break;
       default:
-        emit(state.changeType(type: ContentType.home));
+        emit(state.changeType(type: ContentType.about));
     }
   }
 }

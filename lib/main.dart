@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         home: BlocProvider(
-          create: (context) => ContentCubit()..changeType(selectedType: 'Home'),
+          create: (context) => ContentCubit()..changeType(selectedType: 'About'),
           child: MainView(),
         ));
   }

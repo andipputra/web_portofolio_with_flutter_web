@@ -8,21 +8,15 @@ class Sidebar extends StatefulWidget {
 }
 
 class _SidebarState extends State<Sidebar> {
-  String currentTile = 'Home';
+  String currentTile = 'About';
   @override
   Widget build(BuildContext context) {
-    // var size = MediaQuery.of(context).size;
 
     var _contentCubit = context.read<ContentCubit>();
 
     return BlocListener<ContentCubit, ContentState>(
         listener: (context, state) {
           switch (state.type) {
-            case ContentType.home:
-              setState(() {
-                currentTile = 'Home';
-              });
-              break;
             case ContentType.about:
               setState(() {
                 currentTile = 'About';
@@ -53,13 +47,6 @@ class _SidebarState extends State<Sidebar> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 DrawerHeader(child: Text('Disini Foto')),
-                DrawerListTile(
-                  judul: 'Home',
-                  isSelected: currentTile == 'Home' ? true : false,
-                  onPress: () {
-                    _contentCubit.changeType(selectedType: 'Home');
-                  },
-                ),
                 DrawerListTile(
                   judul: 'About',
                   isSelected: currentTile == 'About' ? true : false,

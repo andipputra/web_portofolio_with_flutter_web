@@ -1,9 +1,9 @@
 part of 'content_cubit.dart';
 
-enum ContentType { home, about, experience, education, contact }
+enum ContentType { about, experience, education, contact }
 
 class ContentState extends Equatable {
-  const ContentState({this.type = ContentType.home});
+  const ContentState({this.type = ContentType.about});
 
   final ContentType type;
 
