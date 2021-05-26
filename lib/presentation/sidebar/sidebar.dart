@@ -11,7 +11,6 @@ class _SidebarState extends State<Sidebar> {
   String currentTile = 'About';
   @override
   Widget build(BuildContext context) {
-
     var _contentCubit = context.read<ContentCubit>();
 
     return BlocListener<ContentCubit, ContentState>(
@@ -46,7 +45,13 @@ class _SidebarState extends State<Sidebar> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                DrawerHeader(child: Text('Disini Foto')),
+                DrawerHeader(
+                    child: CircleAvatar(
+                        radius: 64,
+                        backgroundColor: Colors.transparent,
+                        backgroundImage: NetworkImage(
+                          'https://firebasestorage.googleapis.com/v0/b/web-portofolio-andipputra.appspot.com/o/IMG_7720%20(1).jpg?alt=media&token=973dcfed-1f0c-402f-959d-8d0d05673776',
+                        ))),
                 DrawerListTile(
                   judul: 'About',
                   isSelected: currentTile == 'About' ? true : false,
@@ -98,7 +103,7 @@ class DrawerListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       selected: isSelected,
-      selectedTileColor: Colors.blue,
+      selectedTileColor: Colors.teal,
       title: Text(judul,
           style: isSelected
               ? TextStyle(color: Colors.white)
